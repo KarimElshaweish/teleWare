@@ -1,20 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { ApplicationProvider, Layout, Text } from "@ui-kitten/components";
+import * as eva from "@eva-design/eva";
+import { Provider } from "react-redux";
 
-export default function App() {
+import { store } from "./store";
+import HomeScreen from "./screens/homeScreen";
+import ExchangeCurrancy from "./exchangeCurrancy/ExchangeCurrancy";
+import ExchangeCurrancyScreen from "./screens/exchangeCurrrancy";
+import { ResourcesNamesList } from "./types";
+
+const Stack = createNativeStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <ApplicationProvider {...eva} theme={eva.dark}>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              name={ResourcesNamesList.HOME}
+              component={HomeScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name={ResourcesNamesList.EXCHANGE_RATE}
+              component={ExchangeCurrancyScreen}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </ApplicationProvider>
+    </Provider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

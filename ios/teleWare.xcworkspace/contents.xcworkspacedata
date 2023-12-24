@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:/Users/karimasharf/Desktop/interviews/teleware/teleWare/ios/CalendarManager-Bridging-Header.h">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/karimasharf/Desktop/interviews/teleware/teleWare/ios/CalendarManagerBridge.m">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/karimasharf/Desktop/interviews/teleware/teleWare/ios/File.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/karimasharf/Desktop/interviews/teleware/teleWare/ios/LocaitonManagerBridge.h">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/karimasharf/Desktop/interviews/teleware/teleWare/ios/LocationModule.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/karimasharf/Desktop/interviews/teleware/teleWare/ios/RCLocationModule.h">
+   </FileRef>
+   <FileRef
+      location = "group:teleWare.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>
