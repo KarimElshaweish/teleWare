@@ -8,10 +8,7 @@ export enum Actions {
   ENABLE_LOCATION_PERMISSION = "PERMISSION/ENABLE_LOCATION",
   SET_LOCATION = "Location/SET",
 }
-interface EnableLocationPermissionAction {
-  type: Actions.ENABLE_LOCATION_PERMISSION;
-  isEnabled: boolean;
-}
+
 
 interface SetLocationAction {
   type: Actions.SET_LOCATION;
@@ -19,7 +16,7 @@ interface SetLocationAction {
   latitude: number;
 }
 
-type LocationActions = EnableLocationPermissionAction | SetLocationAction;
+type LocationActions = SetLocationAction;
 
 export default (state = initialState, action: LocationActions) => {
   switch (action.type) {

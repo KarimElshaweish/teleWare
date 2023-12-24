@@ -1,10 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
-import { Actions } from "./state/reducer";
-import { useCallback } from "react";
+import { useSelector } from "react-redux";
 import { GlobalState } from "../../types";
 import { Platform } from "react-native";
 import { PermissionsAndroid } from "react-native";
 import LocationModule from "../../nativeModules/locations";
+import useSetLocationPostion from "./useSetLocationPostion";
 
 export const useRequestLocationPermissionForAndroid = async () => {
   const updateLocation = useUpdateLocation();
@@ -58,29 +57,10 @@ const useUpdateLocation = () => {
   };
 };
 
-export const useEnabkeLocationState = () => {
-  const dispatch = useDispatch();
-  return useCallback(() => {
-    dispatch({
-      type: Actions.ENABLE_LOCATION_PERMISSION,
-    });
-  }, []);
-};
-export const useSetLocationPostion = () => {
-  const dispatch = useDispatch();
-  return (longtude: number, latitude: number) => {
-    dispatch({
-      type: Actions.SET_LOCATION,
-      longtude,
-      latitude,
-    });
-  };
-};
 export const useGetLocation = () => {
   const setLocation = useSetLocationPostion();
   const androidPermission = useCheckLocationPermissionForAndroid();
   return () => {
-    // androidPermission();
     if (Platform.OS === "android") {
       androidPermission();
     } else {

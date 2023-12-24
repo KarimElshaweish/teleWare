@@ -72,7 +72,7 @@ const ExchangeCurrancy = () => {
   if (Object.keys(currancy).length !== 0) {
     return <Graph conversion_rates={currancy} />;
   }
-  return <ActivityIndicator size="large" />;
+  return <ActivityIndicator size="large"/>;
 };
 const styles = StyleSheet.create({
   container: {
